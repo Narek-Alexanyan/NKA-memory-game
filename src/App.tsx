@@ -1,8 +1,10 @@
+import { AppRoutes } from "./routes";
+
 function App() {
   return (
-    <div className="container">
-      <p className="text-2xl text-red-500 px-6">Hello</p>
-    </div>
+    <>
+      <AppRoutes />
+    </>
   );
 }
 
