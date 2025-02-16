@@ -2,11 +2,9 @@ import { Outlet } from "react-router";
 
 const MainLayout = () => {
   return (
-    <div className="bg-primary-bg main_layout h-full overflow-hidden w-full">
-      <main className="bg-white">
-        <Outlet />
-      </main>
-    </div>
+    <main className="w-main h-screen mx-auto overflow-hidden bg-patrick-blue/95 text-white">
+      <Outlet />
+    </main>
   );
 };
 
