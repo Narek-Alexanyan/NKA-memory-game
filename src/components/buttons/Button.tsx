@@ -1,10 +1,10 @@
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
 }
 
-export const Button = ({ children }: ButtonProps) => {
+export const Button = ({ children, onClick }: ButtonProps) => {
   return (
-    <button className="w-full bg-grape inline-flex items-center justify-between p-4 gap-4 rounded-full transition-colors uppercase hover:bg-slate-blue cursor-pointer">
+    <button className="btn-primary" onClick={onClick}>
       <img src="/images/crystal.png" className="w-6 h-6" alt="crystal" />
       <p className="text-2xl">{children}</p>
       <img src="/images/crystal.png" className="w-6 h-6" alt="crystal" />

@@ -1,7 +1,15 @@
 import { Button } from "../components/buttons/Button";
 import { CardCrystals } from "../components/ui/CardCrystals";
+import { useNavigate } from "react-router";
+
 
 export const MainMenu = () => {
+    const navigate = useNavigate();
+
+    const handleExit = () => {
+        navigate("/")
+    }
+
   return (
     <section>
       <div className="py-12 flex-center">
@@ -14,7 +22,7 @@ export const MainMenu = () => {
         <Button>Play</Button>
         <Button>history</Button>
         <Button>settings</Button>
-        <Button>exit</Button>
+        <Button onClick={handleExit}>exit</Button>
       </div>
     </section>
   );
