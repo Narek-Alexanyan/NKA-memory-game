@@ -18,7 +18,7 @@ export const GameSelection = () => {
 
       <div className="pt-12">
         <div className="flex flex-column gap-6 items-center justify-center px-8">
-          <Link to="/" className="w-full">
+          <Link to="/main-menu" className="w-full">
             <div className="w-full h-24 rounded-lg px-8 py-3 bg-patrick-blue hover:bg-patrick-blue/50 transition-colors flex justify-between items-center">
               <CardCrystals />
               <p className="text-xl">Flip Memory Game</p>

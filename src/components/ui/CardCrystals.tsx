@@ -1,6 +1,6 @@
 export const CardCrystals = () => {
   return (
-    <div className="relative w-22 h-22">
+    <div className="relative w-32 h-22">
       <img
         src="/images/easy-crystal.jpeg"
         alt="easy-crystal"
