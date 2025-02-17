@@ -6,8 +6,8 @@ import { useNavigate } from "react-router";
 export const MainMenu = () => {
     const navigate = useNavigate();
 
-    const handleExit = () => {
-        navigate("/")
+    const handleNavigate = (path: string) => {
+        navigate(path)
     }
 
   return (
@@ -21,8 +21,8 @@ export const MainMenu = () => {
       <div className="flex items-center justify-center flex-col mt-6 gap-3 px-32">
         <Button>Play</Button>
         <Button>history</Button>
-        <Button>settings</Button>
-        <Button onClick={handleExit}>exit</Button>
+        <Button onClick={() => handleNavigate("/settings")}>settings</Button>
+        <Button onClick={() => handleNavigate("/")}>exit</Button>
       </div>
     </section>
   );
