@@ -1,6 +1,5 @@
-@layer base;
-
 @import "tailwindcss/preflight.css" layer(base);
+@layer base;
 
 @layer base {
   html,
