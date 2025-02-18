@@ -19,7 +19,7 @@ export const MainMenu = () => {
         Flip Memory Game
       </div>
       <div className="flex items-center justify-center flex-col mt-6 gap-3 px-32">
-        <Button>Play</Button>
+        <Button onClick={() => handleNavigate("/game")}>Play</Button>
         <Button>history</Button>
         <Button onClick={() => handleNavigate("/settings")}>settings</Button>
         <Button onClick={() => handleNavigate("/")}>exit</Button>
