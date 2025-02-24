@@ -1,5 +1,6 @@
 export interface FlipCardType {
-    id: number,
+    id?: number,
     img: string,
-    name: string
+    name: string,
+    matched: boolean,
 }

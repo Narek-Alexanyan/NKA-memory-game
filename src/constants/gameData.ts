@@ -2,33 +2,33 @@ import { FlipCardType } from "../types/games/indexType.ts";
 
 export const flipCards: FlipCardType[] = [
     {
-        id: 1,
         img: 'gem-1',
-        name: 'gem-1'
+        name: 'gem-1',
+        matched: false
     },
     {
-        id: 2,
         img: 'gem-2',
-        name: 'gem-2'
+        name: 'gem-2',
+        matched: false
     },
     {
-        id: 3,
         img: 'gem-3',
-        name: 'gem-3'
+        name: 'gem-3',
+        matched: false
     },
     {
-        id: 4,
         img: 'gem-4',
-        name: 'gem-4'
+        name: 'gem-4',
+        matched: false
     },
     {
-        id: 5,
         img: 'gem-5',
-        name: 'gem-5'
+        name: 'gem-5',
+        matched: false
     },
     {
-        id: 6,
         img: 'gem-6',
-        name: 'gem-6'
+        name: 'gem-6',
+        matched: false
     },
 ]

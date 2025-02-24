@@ -5,17 +5,17 @@ import { FlipCardType } from "../../types/games/indexType.ts";
 
 interface FlipCardProps {
     data: FlipCardType;
-    onClick: (data: FlipCardType) => void;
+    flipped: boolean;
+    disabled: boolean;
+    handleChoice: (data: FlipCardType) => void;
 }
-export const FlipCard = ({ data, onClick }: FlipCardProps) => {
-    const [isFlipped, setIsFlipped] = useState(false)
+export const FlipCard = ({ data, flipped, disabled, handleChoice }: FlipCardProps) => {
     const [isAnimating, setIsAnimating] = useState(false)
 
     const handleFlip = () => {
-        if (!isAnimating) {
-            setIsFlipped(!isFlipped);
+        if (!isAnimating && !disabled && !flipped) {
             setIsAnimating(true);
-            onClick(data)
+            handleChoice(data)
         }
     };
 
@@ -23,7 +23,7 @@ export const FlipCard = ({ data, onClick }: FlipCardProps) => {
         <div className="w-full h-38 cursor-pointer perspective-distant"
              onClick={handleFlip}>
             <motion.div className="relative w-full h-full transform-3d"
-                        animate={{ rotateY: isFlipped ? 180 : 0 }}
+                        animate={{ rotateY: flipped ? 180 : 0 }}
                         transition={{ duration: 0.6 }}
                         onAnimationComplete={() => setIsAnimating(false)}>
                 <div className="absolute w-full h-full flex items-center justify-center bg-slate-800 rounded-lg border backface-hidden">
