@@ -2,16 +2,15 @@ import { Button } from "../components/buttons/Button";
 import { CardCrystals } from "../components/ui/CardCrystals";
 import { useNavigate } from "react-router";
 
-
 export const MainMenu = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleNavigate = (path: string) => {
-        navigate(path)
-    }
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
 
   return (
-    <section>
+    <section className="h-screen">
       <div className="py-12 flex-center">
         <CardCrystals />
       </div>

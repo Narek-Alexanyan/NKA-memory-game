@@ -1,6 +1,6 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: string | string[];
-  className: string;
+  children?: string | string[];
+  className?: string;
 }
 
 export const Button = ({ children, onClick, className }: ButtonProps) => {
