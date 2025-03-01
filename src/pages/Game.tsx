@@ -5,6 +5,7 @@ import { useMemoryGame } from "../hooks/useMemoryGame.ts";
 import { useTimer } from "../hooks/useTimer.ts";
 import { GameHeader } from "../components/games/GameHeader.tsx";
 import { GameBoard } from "../components/games/GameBoard.tsx";
+import { GameOver } from "../components/games/GameOver.tsx";
 
 const cards = [...flipCards, ...flipCards];
 
@@ -28,28 +29,29 @@ export const Game = () => {
 
   return (
     <section className="px-6 mx-auto py-6 relative">
-      <Link to="/main-menu">
-        <IconButton name="x" className="absolute left-6 top-10" size={28} />
-      </Link>
-
-      <GameHeader
-        highScore={highScore}
-        matchedPairs={matchedPairs}
-        totalPairs={totalPairs}
-        turns={turns}
-        timer={timer}
-        gameComplete={gameComplete}
-        onRestart={initializeGame}
-      />
-
-      <GameBoard
-        cards={shuffledCards}
-        firstCard={firstCard}
-        secondCard={secondCard}
-        cardDisabled={cardDisabled}
-        gameComplete={gameComplete}
-        onCardClick={handleCardClick}
-      />
+      {gameComplete ? (
+        <GameOver turns={turns} timer={timer} onRestart={initializeGame} />
+      ) : (
+        <>
+          <Link to="/main-menu">
+            <IconButton name="x" className="absolute left-6 top-10" size={28} />
+          </Link>
+          <GameHeader
+            highScore={highScore}
+            matchedPairs={matchedPairs}
+            totalPairs={totalPairs}
+            turns={turns}
+            timer={timer}
+          />
+          <GameBoard
+            cards={shuffledCards}
+            firstCard={firstCard}
+            secondCard={secondCard}
+            cardDisabled={cardDisabled}
+            onCardClick={handleCardClick}
+          />
+        </>
+      )}
     </section>
   );
 };

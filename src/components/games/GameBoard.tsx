@@ -6,7 +6,6 @@ type GameBoardProps = {
   firstCard: FlipCardType | null;
   secondCard: FlipCardType | null;
   cardDisabled: boolean;
-  gameComplete: boolean;
   onCardClick: (card: FlipCardType) => void;
 };
 
@@ -15,7 +14,6 @@ export const GameBoard = ({
   firstCard,
   secondCard,
   cardDisabled,
-  gameComplete,
   onCardClick,
 }: GameBoardProps) => {
   return (
@@ -24,7 +22,7 @@ export const GameBoard = ({
         <FlipCard
           key={index}
           data={item}
-          disabled={cardDisabled || gameComplete}
+          disabled={cardDisabled}
           flipped={
             firstCard?.id === item.id ||
             secondCard?.id === item.id ||
